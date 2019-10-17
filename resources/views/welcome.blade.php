@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Subic Jobs
                 </div>
 
                 <div class="links">
