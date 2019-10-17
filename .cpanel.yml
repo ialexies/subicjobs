@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/user/ejvotgmy/repositories/subicjobs/public
+    - /bin/cp index.html $DEPLOYPATH
+ 
+
