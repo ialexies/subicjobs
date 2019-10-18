@@ -1730,6 +1730,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -1750,25 +1752,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {
+    var _ref;
+
+    return _ref = {
       name: 'hello',
-      articles: [],
-      article: {
-        id: '',
-        title: '',
-        company: '',
-        description: ''
-      },
-      article_id: '',
-      pagination: {},
-      edit: false
-    };
+      jobs: []
+    }, _defineProperty(_ref, "jobs", {
+      id: '',
+      title: '',
+      company: '',
+      description: ''
+    }), _defineProperty(_ref, "job_id", ''), _defineProperty(_ref, "pagination", {}), _defineProperty(_ref, "edit", false), _ref;
   },
   created: function created() {
-    this.fetchArticles();
+    this.fetchJobs();
   },
   methods: {
-    fetchArticles: function fetchArticles() {
+    fetchJobs: function fetchJobs() {
       var _this = this;
 
       fetch('api/jobs') //url that fetch
@@ -1777,8 +1777,7 @@ __webpack_require__.r(__webpack_exports__);
       }) // map the response into json
       .then(function (res) {
         //get the actual data
-        _this.articles = res.data;
-        console.log(res.data); //to get the actual data not an object, you need to get the res.data. 
+        _this.jobs = res.data; // console.log(res.data); //to get the actual data not an object, you need to get the res.data. 
       });
     }
   }
@@ -37146,22 +37145,18 @@ var render = function() {
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),
-      _vm._l(_vm.articles, function(article) {
-        return _c(
-          "div",
-          { key: article.id, staticClass: "card card-body mb-2" },
-          [
-            _c("h3", [_vm._v(_vm._s(article.company))]),
+      _vm._l(_vm.jobs, function(job) {
+        return _c("div", { key: job.id, staticClass: "card card-body mb-2" }, [
+          _c("h3", [_vm._v(_vm._s(job.company))]),
+          _vm._v(" "),
+          _c("hr"),
+          _vm._v(" "),
+          _c("div", { staticClass: "ml-4" }, [
+            _c("b", [_vm._v(_vm._s(job.title))]),
             _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
-            _c("div", { staticClass: "ml-4" }, [
-              _c("b", [_vm._v(_vm._s(article.title))]),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(article.description))])
-            ])
-          ]
-        )
+            _c("p", [_vm._v(_vm._s(job.description))])
+          ])
+        ])
       })
     ],
     2
