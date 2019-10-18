@@ -13,7 +13,8 @@
 		<body>
 			<div id="app">
 				<div class="container">
-					<jobs></jobs>
+                    <jobs></jobs>
+                    <passport-clients></passport-clients>
 					<script src="{{asset('js/app.js')}}"></script>
 				</div>
 			</div>
