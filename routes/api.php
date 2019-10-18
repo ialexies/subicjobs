@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('jobs', 'JobController@index');
+//list single article
+Route::get('jobs/{id}', 'JobController@show');
+//create new article
+Route::post('jobs', 'JobController@store');
+//update article
+Route::put('jobs/{id}', 'JobController@index');
