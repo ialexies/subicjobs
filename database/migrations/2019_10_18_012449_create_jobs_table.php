@@ -17,6 +17,7 @@ class CreateJobsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('title');
+            $table->string('company');
             $table->mediumText('description');
         });
     }

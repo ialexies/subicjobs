@@ -1743,6 +1743,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1751,6 +1756,7 @@ __webpack_require__.r(__webpack_exports__);
       article: {
         id: '',
         title: '',
+        company: '',
         description: ''
       },
       article_id: '',
@@ -37136,18 +37142,24 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h2", [_vm._v("Jobs")]),
+      _c("h1", [_vm._v("Jobs")]),
+      _vm._v(" "),
+      _c("br"),
       _vm._v(" "),
       _vm._l(_vm.articles, function(article) {
         return _c(
           "div",
           { key: article.id, staticClass: "card card-body mb-2" },
           [
-            _c("h3", [_vm._v(_vm._s(article.title))]),
+            _c("h3", [_vm._v(_vm._s(article.company))]),
             _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(article.description))]),
+            _c("hr"),
             _vm._v(" "),
-            _c("hr")
+            _c("div", { staticClass: "ml-4" }, [
+              _c("b", [_vm._v(_vm._s(article.title))]),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(article.description))])
+            ])
           ]
         )
       })

@@ -1,11 +1,16 @@
 <template>
 	<div>
-		<h2>Jobs</h2>
-
+		<h1>Jobs</h1>
+        <br>
         <div class="card card-body mb-2" v-for="article in articles" v-bind:key="article.id">
-            <h3>{{article.title}}</h3>
-            <p>{{article.description}}</p>
-            <hr>
+            
+            <h3>{{article.company}}</h3>
+                <hr>
+            <div class="ml-4">
+                <b>{{article.title}}</b>
+                <p>{{article.description}}</p>
+            </div>
+         
         </div>
 		
 	</div>
@@ -20,6 +25,7 @@
 				article:{
 					id:'',
 					title:'',
+					company:'',
 					description:''
 				},
 				article_id: '',
