@@ -1,12 +1,13 @@
 <template>
 	<div>
-		<h2>
-			Articles
-			<div class="card card-body mb-2" v-for="article in articles" v-bind:key="article.id">
-				<h3>{{article.title}}</h3>
-				<p>{{article.body}}</p>
-			</div>
-		</h2>
+		<h2>Jobs</h2>
+
+        <div class="card card-body mb-2" v-for="article in articles" v-bind:key="article.id">
+            <h3>{{article.title}}</h3>
+            <p>{{article.description}}</p>
+            <hr>
+        </div>
+		
 	</div>
 </template>
  
@@ -19,7 +20,7 @@
 				article:{
 					id:'',
 					title:'',
-					body:''
+					description:''
 				},
 				article_id: '',
 				pagination:{},
@@ -31,7 +32,7 @@
 			},
 			methods: {
 				fetchArticles() {
-					alert('fdf');
+
 					fetch('api/jobs') //url that fetch
 					.then(res=>res.json()) // map the response into json
 					.then(res => { //get the actual data

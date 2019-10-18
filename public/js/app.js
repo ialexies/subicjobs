@@ -1742,6 +1742,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1750,7 +1751,7 @@ __webpack_require__.r(__webpack_exports__);
       article: {
         id: '',
         title: '',
-        body: ''
+        description: ''
       },
       article_id: '',
       pagination: {},
@@ -1764,7 +1765,6 @@ __webpack_require__.r(__webpack_exports__);
     fetchArticles: function fetchArticles() {
       var _this = this;
 
-      alert('fdf');
       fetch('api/jobs') //url that fetch
       .then(function (res) {
         return res.json();
@@ -37133,26 +37133,27 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "h2",
-      [
-        _vm._v("\n\t\tArticles\n\t\t"),
-        _vm._l(_vm.articles, function(article) {
-          return _c(
-            "div",
-            { key: article.id, staticClass: "card card-body mb-2" },
-            [
-              _c("h3", [_vm._v(_vm._s(article.title))]),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(article.body))])
-            ]
-          )
-        })
-      ],
-      2
-    )
-  ])
+  return _c(
+    "div",
+    [
+      _c("h2", [_vm._v("Jobs")]),
+      _vm._v(" "),
+      _vm._l(_vm.articles, function(article) {
+        return _c(
+          "div",
+          { key: article.id, staticClass: "card card-body mb-2" },
+          [
+            _c("h3", [_vm._v(_vm._s(article.title))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(article.description))]),
+            _vm._v(" "),
+            _c("hr")
+          ]
+        )
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
