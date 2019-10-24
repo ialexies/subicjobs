@@ -42,7 +42,18 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // return new JobResouce($request);
+        
+        $job = $request->isMethod('put') ? Job::findOrFail($request->job_id) : new Job;
+        // $job->id =  $request->input('job_id');
+        $job->title = $request->input('title');
+        $job->company = $request->input('company');
+        $job->description = $request->input('description');
+
+        if ($job->save()){
+            return new JobResouce($job);
+        }
     }
 
     /**
@@ -85,8 +96,12 @@ class JobController extends Controller
      * @param  \App\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Job $job)
+    public function destroy( $id)
     {
         //
+        $job = Job::findOrFail($id);
+        if($job->delete()){
+            return new JobResouce($job);
+        }
     }
 }
