@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('jobs', 'JobController@index');
+Route::get('jobs', 'JobController@index')->middleware('auth:api');
 //list single article
 Route::get('jobs/{id}', 'JobController@show');
 //create new article
