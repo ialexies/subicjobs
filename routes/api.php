@@ -25,3 +25,10 @@ Route::get('jobs/{id}', 'JobController@show');
 Route::post('jobs', 'JobController@store');
 //update article
 Route::put('jobs/{id}', 'JobController@index');
+
+
+route::post('login', 'UserController@login');
+route::post('register', 'UserController@register');
+route::group(['middleware'=>'auth:api'], function(){
+    Route::post('details', 'UserController@details');
+});
